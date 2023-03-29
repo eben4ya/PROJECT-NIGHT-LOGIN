@@ -6,14 +6,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ToDoList App</title>
-            <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
         <!-- NAVBAR -->
         <navbar class="navbar-container">
             <div class="navbar-left">
-                <h1 class="navbar-title">WELCOME TO OUR TODOLIST APP</h1>
+                <h1 class="navbar-title">WELCOME TO (NAME) TODOLIST APP</h1>
             </div>
             <div class="navbar-right">
                 <div class="navbar-items">
@@ -23,31 +23,84 @@
                 </div></div>
         </navbar>
         <div class="main-container">
-            <!-- HOME -->
-            <div class="home-container">
-                <div class="home-heading">INGIN MENJADI PRODUKTIF?</div>
-                <div class="home-content">
-                    <a href="#app">COBA TODOLIST SEKARANG</a>
-                    <img src="" alt="">
-                </div>
+
+
+
+        <!-- HOME/ABOUT -->
+        <div class="home-container">
+            <div class="home-heading">WANT TO BE PRODUCTIVE ?</div>
+            <div class="home-content">
+                <a href="#app">TRY (NAME) TODOLIST NOW</a>
+                <img src="" alt="">
             </div>
+        </div>
 
-            <!-- BENEFIT -->
-            <div class="benefit-container"></div>
-    
-    
-            <!-- TO DO LIST APP -->
-            <div class="app-container" id="app"></div>
-    
-    
-            <!-- OUR TEAM -->
-            <div class="ourTeam-container"></div>
 
-            <!-- ABOUT -->
-            <div class="about-container"></div>
-        </div>    
+
+        <!-- BENEFIT -->
+        <div class="benefit-container"></div>
+
+
+
+        <!-- TO DO LIST APP -->
+        <div class="app-container" id="app">
+            <section class="create-todo">
+                <h2>CREATE A TODO</h2>
+                <form id="new-todo-form">
+                    <div>
+                        <h3>What's on your todo list ?</h3>
+                        <input type="text" name="content" id="content" size="40" placeholder="e.g. Learn Next.js">
+                        </input>
+                    </div>
+                    <h3>Priority</h3>
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="category" id="category1" value="urgent">
+                            </input>
+                            <span class="bubble urgent"></span>
+                            <div>Urgent</div>
+                        </label>
+                        <label>
+                            <input type="radio" name="category" id="category2" value="notUrgent">
+                            <span class="bubble notUrgent"></span>
+                            <div>Not Urgent</div>
+                        </label>
+                    </div>
+                    <br>
+                    <input type="submit" value="Add Todo">
+                </form>
+            </section>
+            <section class="todo-list">
+                <h3>TODO LIST</h3>
+                <div class="select">
+                    <select name="progress" class="filter-todo">
+                        <option value="All">All</option>
+                        <option value="Complete">Complete</option>
+                        <option value="Incomplete">Incomplete</option>
+                    </select>
+                </div>
+                <div class="list" id="todo-list" >
+                   
+                </div>
+            </section>
+        </div>
+        
+
+            
+        <!-- OUR TEAM -->
+        <div class="ourTeam-container"></div>
+
+
+
+        <!-- ABOUT -->
+        <div class="about-container"></div>   
+
+
+        
         <!-- FOOTER -->
-        <footer></footer>
+        <footer>
+
+        </footer>
 
         <script src="index.js"></script>
 
