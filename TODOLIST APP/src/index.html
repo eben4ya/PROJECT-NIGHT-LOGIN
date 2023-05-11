@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ToDoList App</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="https://kit.fontawesome.com/9862f5d7a3.js" crossorigin="anonymous"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/9862f5d7a3.js" crossorigin="anonymous"></script>
+</head>
 
-    <body>
-        <!-- NAVBAR -->
-        <navbar class="navbar-container">
-            <div class="navbar-left">
-                <h1 class="navbar-title">WELCOME TO (NAME) TODOLIST APP</h1>
+<body>
+    <!-- NAVBAR -->
+    <navbar class="navbar-container">
+        <div class="navbar-left">
+            <h1 class="navbar-title">WELCOME TO (NAME) TODOLIST APP</h1>
+        </div>
+        <div class="navbar-right">
+            <div class="navbar-items">
+                <a href="#benefit">Benefit</a>
+                <a href="#app">App</a>
+                <a href="#ourTeam">Our Team</a>
             </div>
-            <div class="navbar-right">
-                <div class="navbar-items">
-                    <a href="#benefit">Benefit</a>
-                    <a href="#app">App</a>
-                    <a href="#ourTeam">Our Team</a>
-                </div></div>
-        </navbar>
-        <div class="main-container">
+        </div>
+    </navbar>
+    <div class="main-container">
 
 
 
@@ -41,88 +42,145 @@
         <!-- BENEFIT -->
         <div class="benefit-container" id="benefit>
             <h2>Benefits</h2>
-            <div class="row">
-                <div class="service">
-                    <i class="fa-solid fa-list-check"></i>
-                    <h3>Minimizing Missed Schedule</h3>
-                    <p>There are due date and activity status</p>
-                </div>
-                <div class="service">
-                    <i class="fa-solid fa-hand-holding-heart"></i>
-                    <h3>Relieving Your Stress</h3>
-                    <p>Enter into a list of all activities in detail</p>
-                </div>
-                <div class="service">
-                    <i class="fa-sharp fa-solid fa-arrow-up-right-dots"></i>
-                    <h3>Increases Productivity</h3>
-                    <p>Organized activity and do the best</p>
-                </div>
+            <div class=" row">
+            <div class="service">
+                <i class="fa-solid fa-list-check"></i>
+                <h3>Minimizing Missed Schedule</h3>
+                <p>There are due date and activity status</p>
+            </div>
+            <div class="service">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <h3>Relieving Your Stress</h3>
+                <p>Enter into a list of all activities in detail</p>
+            </div>
+            <div class="service">
+                <i class="fa-sharp fa-solid fa-arrow-up-right-dots"></i>
+                <h3>Increases Productivity</h3>
+                <p>Organized activity and do the best</p>
             </div>
         </div>
+    </div>
 
 
-        <!-- TO DO LIST APP -->
-        <div class="app-container" id="app">
-            <section class="create-todo">
-                <h2>CREATE A TODO</h2>
-                <form id="new-todo-form">
-                    <div>
-                        <h3>What's on your todo list ?</h3>
-                        <input type="text" name="content" id="content" size="40" placeholder="e.g. Learn Next.js">
+    <!-- TO DO LIST APP -->
+    <div class="app-container" id="app">
+        <section class="create-todo">
+            <h2>CREATE A TODO</h2>
+            <form id="new-todo-form">
+                <div>
+                    <h3>What's on your todo list ?</h3>
+                    <input type="text" name="content" id="content" size="40" placeholder="e.g. Learn Next.js">
+                    </input>
+                </div>
+                <h3>Priority</h3>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="category" id="category1" value="urgent">
                         </input>
-                    </div>
-                    <h3>Priority</h3>
-                    <div class="options">
-                        <label>
-                            <input type="radio" name="category" id="category1" value="urgent">
-                            </input>
-                            <span class="bubble urgent"></span>
-                            <div>Urgent</div>
-                        </label>
-                        <label>
-                            <input type="radio" name="category" id="category2" value="notUrgent">
-                            <span class="bubble notUrgent"></span>
-                            <div>Not Urgent</div>
-                        </label>
-                    </div>
-                    <br>
-                    <input type="submit" value="Add Todo">
-                </form>
-            </section>
-            <section class="todo-list">
-                <h3>TODO LIST</h3>
-                <div class="select">
-                    <select name="progress" class="filter-todo">
-                        <option value="All">All</option>
-                        <option value="Complete">Complete</option>
-                        <option value="Incomplete">Incomplete</option>
-                    </select>
+                        <span class="bubble urgent"></span>
+                        <div>Urgent</div>
+                    </label>
+                    <label>
+                        <input type="radio" name="category" id="category2" value="notUrgent">
+                        <span class="bubble notUrgent"></span>
+                        <div>Not Urgent</div>
+                    </label>
                 </div>
-                <div class="list" id="todo-list" >
-                   
+                <br>
+                <input type="submit" value="Add Todo">
+            </form>
+        </section>
+        <section class="todo-list">
+            <h3>TODO LIST</h3>
+            <div class="select">
+                <select name="progress" class="filter-todo">
+                    <option value="All">All</option>
+                    <option value="Complete">Complete</option>
+                    <option value="Incomplete">Incomplete</option>
+                </select>
+            </div>
+            <div class="list" id="todo-list">
+
+            </div>
+        </section>
+    </div>
+
+    <!-- OUR TEAM -->
+    <div class="ourTeam-container">
+        <section>
+            <h2>Our Team</h2>
+            <div class="member">
+                <div class="member-box">
+                    <div class="member-container">
+                        <div class="img-container">
+                            <img src="img/Ben.png" alt="Foto Ben">
+                        </div>
+                        <h1>Benaya Imanuela</h1>
+                        <p>Teknologi Informasi 22</p>
+                        <a class="fa fa-linkedin" href="https://www.linkedin.com/in/benaya-imanuela/"></a>
+                        <a class="fa fa-instagram" href="https://instagram.com/ebenaya_imanuela"></a>
+                        <a class="fa fa-envelope" href="mailto:benayaimanuela2004@mail.ugm.ac.id"></a>
+                    </div>
                 </div>
-            </section>
-        </div>
-        
+                <div class="member-box">
+                    <div class="member-container">
+                        <div class="img-container">
+                            <img src="img/ivan.png" alt="Foto Ivan">
+                        </div>
+                        <h1>Hizkia Joy Ivan</h1>
+                        <p>Teknologi Informasi 21</p>
+                        <a class="fa fa-linkedin"
+                            href="https://www.linkedin.com/in/hizkia-joy-ivan?originalSubdomain=id"></a>
+                        <a class="fa fa-instagram" href="https://instagram.com/ivanjoy17"></a>
+                        <a class="fa fa-envelope" href="mailto:joyivan6@gmail.com"></a>
+                    </div>
+                </div>
+                <div class="member-box">
+                    <div class="member-container">
+                        <div class="img-container">
+                            <img src="img/Bulan.png" alt="Foto Bulan">
+                        </div>
+                        <h1>Bulan Aprilia Putri</h1>
+                        <p>Teknologi Informasi 22</p>
+                        <a class="fa fa-linkedin"
+                            href="https://www.linkedin.com/in/bulan-aprilia-putri-murela-26ab6724b/"></a>
+                        <a class="fa fa-instagram" href="https://instagram.com/bulanmurela"></a>
+                        <a class="fa fa-envelope" href="mailto:bulanapriliaputrimurela@mail.ugm.ac.id"></a>
+                    </div>
+                </div>
+                <div class="member-box">
+                    <div class="member-container">
+                        <div class="img-container">
+                            <img src="img/della.png" alt="Foto Della">
+                        </div>
+                        <h1>Della Febi Alfian</h1>
+                        <p>Teknologi Informasi 22</p>
+                        <a class="fa fa-linkedin" href="https://www.linkedin.com/in/dellafebialfian"></a>
+                        <a class="fa fa-instagram" href="https://instagram.com/dellafebi"></a>
+                        <a class="fa fa-envelope" href="mailto:dellafebialfian@mail.ugm.ac.id"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
-            
-        <!-- OUR TEAM -->
-        <div class="ourTeam-container"></div>
+    <!-- OUR TEAM -->
+    <div class="ourTeam-container"></div>
 
 
 
-        <!-- ABOUT -->
-        <div class="about-container"></div>   
+    <!-- ABOUT -->
+    <div class="about-container"></div>
 
 
-        
-        <!-- FOOTER -->
-        <footer>
 
-        </footer>
+    <!-- FOOTER -->
+    <footer>
 
-        <script src="index.js"></script>
+    </footer>
 
-    </body>
+    <script src="index.js"></script>
+
+</body>
 
 </html>
