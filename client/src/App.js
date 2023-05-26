@@ -1,18 +1,18 @@
-import React from 'react';
-import Todo from './components/Todo';
+import './App.css';
+import Main from './components/Main';
 import Navbar from './components/Navbar';
 import OurTeam from './components/OurTeam';
-import Main from './components/Main';
+import Todo from './components/Todo';
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <Main />
-      <Todo />
-      <OurTeam />
-    </div>
-  )
+    <>
+        <Navbar />
+        <Main />
+        <Todo/>
+        <OurTeam />
+    </>
+  );
 }
 
 export default App;
