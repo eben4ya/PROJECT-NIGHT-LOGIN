@@ -1,0 +1,41 @@
+.navbar-container {
+    display: flex;
+    background-color: var(--dark-purple);
+    padding: 10px;
+    position: sticky;
+}
+
+.navbar-left {
+    flex: 2;
+    padding: 10px;
+}
+
+.navbar-title {
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.navbar-right {
+    flex: 3;
+}
+
+.navbar-items {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-right: 30px;
+}
+
+.navbar-items a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 30px;
+}
+
+.navbar-items a:hover {
+    color: var(--pink);
+    transition: all ease 0.3s;
+}

@@ -1,8 +1,8 @@
 import './App.css';
-import Main from './components/Main';
-import Navbar from './components/Navbar';
-import OurTeam from './components/OurTeam';
-import Todo from './components/Todo';
+import Main from './components/main/Main';
+import Navbar from './components/navbar/Navbar';
+import OurTeam from './components/ourteam/OurTeam';
+import Todo from './components/todo/Todo';
 
 const App = () => {
   return (
