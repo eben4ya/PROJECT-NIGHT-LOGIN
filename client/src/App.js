@@ -1,5 +1,5 @@
 import './App.css';
-import Main from './components/main/Main';
+import Benefits from './components/benefits/Benefits';
 import Navbar from './components/navbar/Navbar';
 import OurTeam from './components/ourteam/OurTeam';
 import Todo from './components/todo/Todo';
@@ -8,7 +8,7 @@ const App = () => {
   return (
     <>
         <Navbar />
-        <Main />
+        <Benefits />
         <Todo/>
         <OurTeam />
     </>
