@@ -5,9 +5,9 @@ const Navbar = () => {
   return (
     <div className="navbar-container">
         <div className="navbar-left">
-            <h1 className="navbar-title">WELCOME TO (NAME) TODOLIST APP</h1>
+            <h1 className="navbar-title">WELCOME TO TODOLIST APP</h1>
         </div>
-        <div class="navbar-right">
+        <div className="navbar-right">
             <div className="navbar-items">
                 <a href="#benefit">Benefit</a>
                 <a href="#app">App</a>

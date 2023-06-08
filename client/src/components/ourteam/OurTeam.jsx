@@ -4,7 +4,7 @@ import React from 'react'
 const OurTeam = () => {
   return (
     
-    <div className="ourTeam-container">
+    <div className="ourTeam-container" id="ourTeam">
         <section>
             <h2>Our Team</h2>
             <div className="member">
