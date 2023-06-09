@@ -21,16 +21,16 @@ section {
     font-weight: 600;
     margin-bottom: 3rem;
     text-align: center;
-}
-
-.create-todo h3 {
+  }
+  
+  .create-todo h3 {
     color: var(--dark);
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 0.5rem;
-}
-
-select {
+  }
+  
+  .select select {
     display: flex;
     margin-left: auto;
     appearance: none;
@@ -41,16 +41,16 @@ select {
     height: 3.2rem;
     cursor: pointer;
     padding: 1rem;
-}
-
-.select {
+  }
+  
+  .select {
     margin: 1rem;
     position: relative;
     overflow: hidden;
     border-radius: 50px;
-}
-
-.select::after {
+  }
+  
+  .select::after {
     content: "\25BC";
     position: absolute;
     background: var(--primary);
@@ -59,23 +59,22 @@ select {
     padding: 1rem;
     pointer-events: none;
     transition: all 0.3s ease;
-
-}
-
-.select::hover::after {
+  }
+  
+  .select:hover::after {
     background: var(--text-color);
     color: var(--dark);
-}
-
-.todo-list h3 {
+  }
+  
+  .todo-list h3 {
     color: var(--dark);
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 0.5rem;
     text-align: center;
-}
-
-.create-todo input[type="text"] {
+  }
+  
+  .create-todo input[type="text"] {
     display: block;
     width: 100%;
     font-size: 1.125rem;
@@ -85,16 +84,16 @@ select {
     border-radius: 0.5rem;
     box-shadow: var(--shadow);
     margin-bottom: 1.5rem;
-}
-
-.create-todo .options {
+  }
+  
+  .create-todo .options {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
     margin-bottom: 1.5rem;
-}
-
-.create-todo .options label {
+  }
+  
+  .create-todo .options label {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -104,14 +103,14 @@ select {
     border-radius: 0.5rem;
     box-shadow: var(--shadow);
     cursor: pointer;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
+  }
+  
+  input[type="radio"],
+  input[type="checkbox"] {
     display: none;
-}
-
-.bubble {
+  }
+  
+  .bubble {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,15 +119,14 @@ input[type="checkbox"] {
     border-radius: 50%;
     border: 2px solid var(--urgent);
     box-shadow: var(--urgent-glow);
-}
-
-/* antar class dotnya dikasih spasi, kalau antar kata dalam class, dotnya disambung */
-.bubble.notUrgent {
+  }
+  
+  .bubble.notUrgent {
     border-color: var(--notUrgent);
     box-shadow: var(--notUrgent-glow);
-}
-
-.bubble::after {
+  }
+  
+  .bubble::after {
     content: "";
     display: block;
     opacity: 0;
@@ -138,27 +136,27 @@ input[type="checkbox"] {
     box-shadow: var(--urgent-glow);
     border-radius: 50%;
     transition: 0.2s ease-in-out;
-}
-
-.bubble.notUrgent::after {
+  }
+  
+  .bubble.notUrgent::after {
     background-color: var(--notUrgent);
     box-shadow: var(--notUrgent-glow);
-}
-
-input:checked~.bubble::after {
+  }
+  
+  input:checked ~ .bubble::after {
     width: 10px;
     height: 10px;
     opacity: 1;
-}
-
-.create-todo .options label div {
+  }
+  
+  .create-todo .options label div {
     color: var(--dark);
     font-weight: 600;
     font-size: 1.125rem;
     margin-top: 1rem;
-}
-
-.create-todo input[type="submit"] {
+  }
+  
+  .create-todo input[type="submit"] {
     display: block;
     width: 100%;
     font-size: 1.125rem;
@@ -170,17 +168,17 @@ input:checked~.bubble::after {
     box-shadow: var(--notUrgent-glow);
     cursor: pointer;
     transition: 0.2s ease-in-out;
-}
-
-.create-todo input[type="submit"]:hover {
+  }
+  
+  .create-todo input[type="submit"]:hover {
     opacity: 0.75;
-}
-
-.todo-list .list {
+  }
+  
+  .todo-list .list {
     margin: 1rem 0;
-}
-
-.todo-list .todo-item {
+  }
+  
+  .todo-list .todo-item {
     display: flex;
     align-items: center;
     background-color: #fff;
@@ -188,145 +186,56 @@ input:checked~.bubble::after {
     border-radius: 0.5rem;
     box-shadow: var(--shadow);
     margin-bottom: 1rem;
-}
-
-.todo-item label {
+  }
+  
+  .todo-item label {
     display: block;
     margin-right: 1rem;
     cursor: pointer;
-}
-
-.todo-item .todo-content {
+  }
+  
+  .todo-item .todo-content {
     flex: 1 1 0%;
-}
-
-.todo-item .todo-content input {
+  }
+  
+  .todo-item .todo-content input {
     color: var(--dark);
     font-size: 1.125rem;
-}
-
-.todo-item .actions {
+  }
+  
+  .todo-item .actions {
     display: flex;
     align-items: center;
-}
-
-.todo-item .actions button {
+  }
+  
+  .todo-item .actions button {
     display: block;
     padding: 0.5rem;
     border-radius: 0.25rem;
     color: #fff;
     cursor: pointer;
     transition: 0.2s ease-in-out;
-}
-
-.todo-item .actions button:hover {
+  }
+  
+  .todo-item .actions button:hover {
     opacity: 0.75;
-}
-
-.todo-item .actions .edit {
+  }
+  
+  .todo-item .actions .edit {
     margin-right: 0.5rem;
     background-color: var(--primary);
-}
-
-.todo-item .actions .delete {
+  }
+  
+  .todo-item .actions .delete {
     background-color: var(--danger);
-}
-
-.todo-item.done .todo-content input {
+  }
+  
+  .todo-item .todo-content input {
     text-decoration: line-through;
     color: var(--grey);
-}
+  }
+  
 
-.ourTeam-container {
-    box-sizing: border-box;
-}
-
-.ourTeam-container h2 {
-    text-align: center;
-    margin: 100px auto 50px;
-}
-
-.ourTeam-container .member {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.member .member-box {
-    width: 100%;
-    padding: 0.5em 0;
-}
-
-.member .member-container {
-    background-color: rgba(255, 255, 255, 0.723);
-    border-radius: 1.5rem;
-    padding: 3.5em 1em;
-    text-align: center;
-    box-shadow: 5px 5px 30px rgb(46, 46, 46);
-    cursor: pointer;
-    transition: 0, 5s;
-}
-
-.member-container:hover {
-    background: linear-gradient(#8573dd, #4d4375);
-    color: #ffffff;
-}
-
-
-.member-container:hover .fa {
-    color: #ffffff;
-}
-
-.img-container {
-    width: 8em;
-    height: 8em;
-    background-color: #3d2c8d;
-    padding: 0.5em;
-    border-radius: 50%;
-    margin: 0 auto 2em auto;
-}
-
-.member-container img {
-    width: 100%;
-    border-radius: 50%;
-}
-
-.member-container:hover .img-container {
-    transform: scale(1.15);
-}
-
-.member-container h1 {
-    margin: 10px auto 20px;
-    font-size: 20px;
-}
-
-.ourTeam-container .fa {
-    margin: 20px 10px 20px;
-    color: #3d2c8d;
-    text-decoration: none;
-    font-size: 20px;
-}
-
-@media screen and (min-width: 768px) {
-    section {
-        padding: 1em 7em;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    section {
-        padding: 1em;
-    }
-
-    .member-container {
-        padding: 5em 1em;
-    }
-
-    .member-box {
-        flex: 0 0 23%;
-        max-width: 23%;
-        margin: 0.5em auto;
-    }
-}
 
 /* END OF TODOLIST APP */
 

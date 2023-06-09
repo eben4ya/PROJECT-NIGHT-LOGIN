@@ -1,53 +1,98 @@
-import './Todo.css'
+import "./Todo.css";
 import React, { useState, useEffect } from "react";
 
 const Todo = () => {
   const [todos, setTodos] = useState([]);
+  const [editingTodoId, setEditingTodoId] = useState(null);
+  const [filter, setFilter] = useState("All");
 
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
     setTodos(storedTodos);
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
+    const content = e.target.elements.content.value;
+    const category = e.target.elements.category.value;
+
+    if (content.trim() === "") {
+      return; // Tidak menambahkan tugas jika konten kosong
+    }
+
     const todo = {
-      content: e.target.elements.content.value,
-      category: e.target.elements.category.value,
+      id: Date.now(),
+      content: content,
+      category: category,
       done: false,
       createdAt: new Date().getTime(),
     };
 
-    const updatedTodos = [...todos, todo];
-    setTodos(updatedTodos);
-    localStorage.setItem("todos", JSON.stringify(updatedTodos));
+    setTodos((prevTodos) => [...prevTodos, todo]);
 
     e.target.reset();
   };
 
-  const handleTodoCheck = (index) => {
-    const updatedTodos = [...todos];
-    updatedTodos[index].done = !updatedTodos[index].done;
+  const handleTodoCheck = (id) => {
+    const updatedTodos = todos.map((todo) => {
+      if (todo.id === id) {
+        return { ...todo, done: !todo.done };
+      }
+      return todo;
+    });
 
     setTodos(updatedTodos);
-    localStorage.setItem("todos", JSON.stringify(updatedTodos));
   };
 
-  const handleTodoEdit = (index, value) => {
-    const updatedTodos = [...todos];
-    updatedTodos[index].content = value;
+  const handleTodoEdit = (id, value) => {
+    const updatedTodos = todos.map((todo) => {
+      if (todo.id === id) {
+        return { ...todo, content: value };
+      }
+      return todo;
+    });
 
     setTodos(updatedTodos);
-    localStorage.setItem("todos", JSON.stringify(updatedTodos));
   };
 
-  const handleTodoDelete = (index) => {
-    const updatedTodos = todos.filter((_, i) => i !== index);
+  const handleTodoDelete = (id) => {
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
 
     setTodos(updatedTodos);
-    localStorage.setItem("todos", JSON.stringify(updatedTodos)); 
-  }; 
+  };
+
+  const handleEditButtonClick = (id) => {
+    setEditingTodoId(id);
+  };
+
+  const handleCancelEdit = () => {
+    setEditingTodoId(null);
+  };
+
+  const handleUpdateTodo = (id, value) => {
+    handleTodoEdit(id, value);
+    setEditingTodoId(null);
+  };
+
+  const handleFilterChange = (e) => {
+    setFilter(e.target.value);
+  };
+
+  const filteredTodos = todos.filter((todo) => {
+    if (filter === "All") {
+      return true;
+    } else if (filter === "Complete") {
+      return todo.done;
+    } else if (filter === "Incomplete") {
+      return !todo.done;
+    }
+    return true;
+  });
 
   return (
     <>
@@ -95,45 +140,66 @@ const Todo = () => {
         <section className="todo-list">
           <h3>TODO LIST</h3>
           <div className="select">
-            <select name="progress" className="filter-todo">
+            <select
+              name="progress"
+              className="filter-todo"
+              value={filter}
+              onChange={handleFilterChange}
+            >
               <option value="All">All</option>
               <option value="Complete">Complete</option>
               <option value="Incomplete">Incomplete</option>
             </select>
           </div>
           <div className="list" id="todo-list">
-            {todos.map((todo, index) => (
+            {filteredTodos.map((todo) => (
               <div
-                key={index}
-                className={`todo-item ${todo.done ? "done" : ""}`}
+                key={todo.id}
+                className={`todo-item ${todo.id ? "editing" : ""}`}
               >
                 <label>
                   <input
                     type="checkbox"
                     checked={todo.done}
-                    onChange={() => handleTodoCheck(index)}
+                    onChange={() => handleTodoCheck(todo.id)}
                   />
                   <span className={`bubble ${todo.category}`} />
-                  <div>{todo.category}</div>
                 </label>
                 <div className="todo-content">
-                  <input
-                    type="text"
-                    value={todo.content}
-                    readOnly={!todo.done}
-                    onChange={(e) => handleTodoEdit(index, e.target.value)}
-                  />
+                  {editingTodoId === todo.id ? (
+                    <input
+                      type="text"
+                      value={todo.content}
+                      onChange={(e) => handleTodoEdit(todo.id, e.target.value)}
+                    />
+                  ) : (
+                    <span>{todo.content}</span>
+                  )}
                 </div>
                 <div className="actions">
-                  <button
-                    className="edit"
-                    onClick={() => handleTodoEdit(index, todo.content)}
-                  >
-                    Edit
-                  </button>
+                  {editingTodoId === todo.id ? (
+                    <>
+                      <button
+                        className="save"
+                        onClick={() => handleUpdateTodo(todo.id, todo.content)}
+                      >
+                        Save
+                      </button>
+                      <button className="cancel" onClick={handleCancelEdit}>
+                        Cancel
+                      </button>
+                    </>
+                  ) : (
+                    <button
+                      className="edit"
+                      onClick={() => handleEditButtonClick(todo.id)}
+                    >
+                      Edit
+                    </button>
+                  )}
                   <button
                     className="delete"
-                    onClick={() => handleTodoDelete(index)}
+                    onClick={() => handleTodoDelete(todo.id)}
                   >
                     Delete
                   </button>

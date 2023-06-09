@@ -1,4 +1,4 @@
-
+import './OurTeam.css'
 import React from 'react'
 
 const OurTeam = () => {
